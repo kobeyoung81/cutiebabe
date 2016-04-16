@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form#formFeed(name="feed", method="post", action="/feed")
+    button#btnFeed(type="submit") Feed
+  form#formPoop(name="poop", method="post", action="/poop")
+    button#btnPoop(type="submit") Poop
+  form#formSleep(name="sleep", method="post", action="/sleep")
+    button#btnSleep(type="submit") Sleep
+  form#formWake(name="wake", method="post", action="/wake")
+    button#btnWake(type="submit") Wake
+  form#formFeed(name="feedsleep", method="post", action="/feedsleep")
+    button#btnWake(type="submit") FeedSleep
+  form#formFeed(name="hugsleep", method="post", action="/hugsleep")
+    button#btnWake(type="submit") HugSleep
