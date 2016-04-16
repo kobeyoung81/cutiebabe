@@ -4,11 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var basicAuth = require('basic-auth-connect');
+//var basicAuth = require('basic-auth-connect');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/cutie');
+var db = monk('localhost:27017/cutiebabe');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -63,7 +63,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error: err
   });
 });
 

@@ -1,41 +1,82 @@
 angular.module('app.controllers', [])
 
-.controller('statisticsCtrl', function($scope) {
-
-})
-
 .controller('entryCtrl', function($scope, $http) {
   $scope.form = {};
   $scope.feed = function() {
-    alert("In here!");
 
-    $http({method: 'POST', url: 'http://192.168.1.102:3000/feed'})
+    $http({method: 'POST', url: '/feed'})
       .then(function successCallback(response){
-        alert(response.status);
+        if (response.status == 200) {
+          alert("Successfully fed!");
+        }
       }, function errorCallback(response){
-        alert(response.status);
+        alert(response.data);
       });
   };
 
   $scope.poop = function() {
-    alert("poop");
+
+    $http({method: 'POST', url: '/poop'})
+      .then(function successCallback(response){
+        if (response.status == 200) {
+          alert("Successfully poop!");
+        }
+      }, function errorCallback(response){
+        alert(response.data);
+      });
   };
 
   $scope.normalsleep = function() {
-    alert("normalsleep");
+
+    $http({method: 'POST', url: '/sleep'})
+      .then(function successCallback(response){
+        if (response.status == 200) {
+          alert("Successfully sleep!");
+        }
+      }, function errorCallback(response){
+        alert(response.data);
+      });
   };
 
   $scope.hugsleep = function() {
-    alert("hugsleep");
+
+    $http({method: 'POST', url: '/hugsleep'})
+      .then(function successCallback(response){
+        if (response.status == 200) {
+          alert("Successfully hugsleep!");
+        }
+      }, function errorCallback(response){
+        alert(response.data);
+      });
   };
 
   $scope.feedsleep = function() {
-    alert("feedsleep");
+
+    $http({method: 'POST', url: '/feedsleep'})
+      .then(function successCallback(response){
+        if (response.status == 200) {
+          alert("Successfully feedsleep!");
+        }
+      }, function errorCallback(response){
+        alert(response.data);
+      });
   };
 
   $scope.wake = function() {
-    alert("wake");
+
+    $http({method: 'POST', url: '/wake'})
+      .then(function successCallback(response){
+        if (response.status == 200) {
+          alert("Cutie waked up :-P");
+        }
+      }, function errorCallback(response){
+        alert(response.data);
+      });
   };
+})
+
+.controller('statisticsCtrl', function($scope) {
+
 })
 
 .controller('historyCtrl', function($scope) {
